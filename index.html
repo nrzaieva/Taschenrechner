@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ein einfacher Taschenrechner">
+    <title>Taschenrechner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Taschenrechner</h1>
+        <p>Ein einfacher Taschenrechner für grundlegende mathematische Operationen.</p>
+    </header>
+    <main>
+        <h2>Geben Sie zwei Zahlen ein, klicken Sie auf eine Operation, um die Berechnung durchzuführen</h2>
+        <section>
+            <form id="zahlen">
+                <label for="zahl-1">Zahl 1: </label>
+                <input type="number" id="zahl-1" required name="zahl-1" placeholder="Erste Zahl">
+                
+                <label for="zahl-2">Zahl 2: </label>
+                <input type="number" id="zahl-2" required name="zahl-2" placeholder="Zweite Zahl">
+
+            <br>
+            </form>
+            <br>
+            <form id="ergebnis">
+                <label for="ergebnis">Ergebnis: </label>
+                <input type="number" id="ergebnis" readonly>
+            </form>
+
+            <form id="submit">
+                <button type="submit">Berechnen</button>
+            </form>
+            <br>
+        </section>
+        <section>
+            <form id="operationen">
+                <button type="button" id="addieren"><span>+</span> <br>addieren</button>
+                <button type="button" id="subtrahieren"><span>- </span><br>subtrahieren</button>
+                <button type="button" id="multiplizieren"><span>* </span><br>multiplizieren</button>
+                <button type="button" id="dividieren"><span>/ </span><br>dividieren</button>
+            </form>  
+        </section>
+    </main>
+    <footer><p>Vielen Dank für die Nutzung unseres Rechner!</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
