@@ -26,17 +26,17 @@ input[type="number"] {
     border-radius: 5px;
 }
 
-button[type="submit"] {
+#berechnen {
     border-radius: 5px;
     width: 200px;
     padding: 10px;
     margin: 10px 0;
     border: 2px solid rgb(16, 189, 16);
     color: rgb(16, 189, 16);
-    font-size: 15px;
+    font-size: 20px;
 }
 
-button[type="submit"]:hover {
+#berechnen:hover {
     background-color: #64f2a6;
     cursor: pointer;
 }
