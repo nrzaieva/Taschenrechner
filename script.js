@@ -12,21 +12,25 @@ const divButton = document.getElementById('dividieren');
 //Event-Listener für die Buttons
 addButton.addEventListener('click', () => {
     selectedOperation = 'addieren';
+    document.getElementById('operation').innerText = selectedOperation;
     berechneErgebnis();
 });
 
 subButton.addEventListener('click', () => {
     selectedOperation = 'subtrahieren';
+    document.getElementById('operation').innerText = selectedOperation;
     berechneErgebnis();
 });
 
 mulButton.addEventListener('click', () => {
     selectedOperation = 'multiplizieren';
+    document.getElementById('operation').innerText = selectedOperation;
     berechneErgebnis();
 });
 
 divButton.addEventListener('click', () => {
     selectedOperation = 'dividieren';
+    document.getElementById('operation').innerText = selectedOperation;
     berechneErgebnis();
 });
 
