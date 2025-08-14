@@ -26,7 +26,7 @@ input[type="number"] {
     border-radius: 5px;
 }
 
-button[type="submit"] {
+#berechnen {
     border-radius: 5px;
     width: 200px;
     padding: 10px;
@@ -36,7 +36,7 @@ button[type="submit"] {
     font-size: 15px;
 }
 
-button[type="submit"]:hover {
+#berechnen:hover {
     background-color: #64f2a6;
     cursor: pointer;
 }
