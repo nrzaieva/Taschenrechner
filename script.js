@@ -12,40 +12,54 @@ const divButton = document.getElementById('dividieren');
 //Event-Listener für die Buttons
 addButton.addEventListener('click', () => {
     selectedOperation = 'addieren';
-    berechneErgebnis();
+    document.getElementById('operation').innerText = selectedOperation;
+    
 });
 
 subButton.addEventListener('click', () => {
     selectedOperation = 'subtrahieren';
-    berechneErgebnis();
+    document.getElementById('operation').innerText = selectedOperation;
 });
 
 mulButton.addEventListener('click', () => {
     selectedOperation = 'multiplizieren';
-    berechneErgebnis();
+    document.getElementById('operation').innerText = selectedOperation;
 });
 
 divButton.addEventListener('click', () => {
     selectedOperation = 'dividieren';
-    berechneErgebnis();
+    document.getElementById('operation').innerText = selectedOperation;
 });
 
-/*document.getElementById('ergebnis').addEventListener('click', (e) => {
-    e.preventDefault(); //seite aktualisierung abbrechen
+document.getElementById('berechnen').addEventListener('click', (e) => {
+    //e.preventDefault(); //seite aktualisierung abbrechen
 
     if (!selectedOperation) {
         alert('Bitte wählen Sie eine Operation aus.');
         return
     };
-    if (isNaN(zahl1) || isNaN(zahl2)) {
-        alert('Bitte geben Sie gültige Zahlen ein.');
-        return;
-    };
+
+    berechneErgebnis();
 
 
-});*/
+});
 
 function berechneErgebnis() {
+    // "1+2"
+    // "2-1"
+    // "2*3"
+    // "6/3"
+
+    // 2. Schritt (bis maximal 7 Stellige Zahlen) iterators:
+    // "10+26"
+    // "25-178"
+    // "2*358"
+    // "600/3"
+
+    // 3. Schritt beliebig viele addiition und subtraktions Operationen hintereinander unterstützen:
+    // "1+2-3+4-5"
+    // "10+20-30+40-50"
+
     const zahl1 = parseFloat(document.getElementById('zahl-1').value);
     const zahl2 = parseFloat(document.getElementById('zahl-2').value);
     const ergebnisFeld = document.getElementById('ergebnis');
