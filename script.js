@@ -30,21 +30,6 @@ divButton.addEventListener('click', () => {
     berechneErgebnis();
 });
 
-/*document.getElementById('ergebnis').addEventListener('click', (e) => {
-    e.preventDefault(); //seite aktualisierung abbrechen
-
-    if (!selectedOperation) {
-        alert('Bitte wählen Sie eine Operation aus.');
-        return
-    };
-    if (isNaN(zahl1) || isNaN(zahl2)) {
-        alert('Bitte geben Sie gültige Zahlen ein.');
-        return;
-    };
-
-
-});*/
-
 function berechneErgebnis() {
     const zahl1 = parseFloat(document.getElementById('zahl-1').value);
     const zahl2 = parseFloat(document.getElementById('zahl-2').value);
