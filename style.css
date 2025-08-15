@@ -59,11 +59,7 @@ button[type="button"]:hover {
     color:rgb(16, 189, 16);
     font-size: 18px;
  }
- /* Operatoren - größer und grün */
- span {
-    color:rgb(16, 189, 16);
-    font-size: 30px;
- }
+
 footer {
     font-size: 15px;
     border-top: 2px solid rgb(79, 181, 59);
@@ -72,8 +68,4 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-}
-#operation {
-    font-size: 15px;
-    margin-top: 10px;
 }

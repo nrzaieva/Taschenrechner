@@ -10,19 +10,15 @@
 <body>
     <header>
         <h1>Taschenrechner</h1>
-        <p>Ein einfacher Taschenrechner für grundlegende mathematische Operationen.</p>
+        <p>Ein einfacher Taschenrechner für grundlegende mathematische Operationen</p>
     </header>
     <main>
-        <h2>Geben Sie zwei Zahlen ein, klicken Sie auf eine Operation, um die Berechnung durchzuführen</h2>
+        <h2>Geben Sie Ihre Beispiel für die Berechnung(Addition und Substraction) ein und drücken Sie dann die "Berechnen", um die Berechnung durchzuführen</h2>
         <section>
-            <form id="zahlen">
-                <label for="zahl-1">Zahl 1: </label>
-                <input type="number" id="zahl-1" required name="zahl-1" placeholder="Erste Zahl">
-                
-                <label for="zahl-2">Zahl 2: </label>
-                <input type="number" id="zahl-2" required name="zahl-2" placeholder="Zweite Zahl">
-
-     <p id='operation'>operation</p>      
+            <form>
+                <label for="input">Rechnenbeispiel: </label>
+                <input type= "text" id="input" required name="input" placeholder=" 2+4 6-1 9+3 ">
+                      
             </form>
             <form>
                 <label for="ergebnis">Ergebnis: </label>
@@ -34,14 +30,7 @@
             </form>
             <br>
         </section>
-        <section>
-            <form id="operationen">
-                <button type="button" id="addieren"><span>+</span> <br>addieren</button>
-                <button type="button" id="subtrahieren"><span>- </span><br>subtrahieren</button>
-                <button type="button" id="multiplizieren"><span>* </span><br>multiplizieren</button>
-                <button type="button" id="dividieren"><span>/ </span><br>dividieren</button>
-            </form>  
-        </section>
+        
     </main>
     <footer><p>Vielen Dank für die Nutzung unseres Rechner!</p></footer>
     <script src="script.js"></script>
