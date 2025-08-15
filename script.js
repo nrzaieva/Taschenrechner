@@ -18,7 +18,7 @@ function calculateInput() {
   
 function parseInput(input) {
     const regex = /(\d+|\+|\-)/g; /* global */
-    return input.match(regex).map(token => {/*{ !isNaN(token) ? Number(token) : token; });*/
+    return input.match(regex).map(token => { 
         if (!isNaN(token)) {
             return Number(token);
         } else {
@@ -26,12 +26,13 @@ function parseInput(input) {
         }
     });
 }
+/*{ !isNaN(token) ? Number(token) : token; });*/
 
     function simpleCalculate(tokens) {
         let result = 0;
         let currentOperator = "+";
 
-        tockens.forEach(token => {
+        tokens.forEach(token => {
             if (typeof token === "number") {
                 if (currentOperator === "+") {
                     result += token;
