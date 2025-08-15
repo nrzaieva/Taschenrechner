@@ -16,8 +16,9 @@ function calculateInput() {
     document.getElementById("ergebnis").value = result;
 }
   
+/* global */
 function parseInput(input) {
-    const regex = /(\d+|\+|\-)/g; /* global */
+    const regex = /(\d+|\+|\-)/g; 
     return input.match(regex).map(token => { 
         if (!isNaN(token)) {
             return Number(token);
