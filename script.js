@@ -33,25 +33,56 @@ function parseInput(input) {
             return token;
         }
     });
-    return tokens;
 }
-/*{ !isNaN(token) ? Number(token) : token; });*/
 
     function simpleCalculate(tokens) {
-        // Erste Zahl
-        let result = 0;
-        let currentOperator = "+";
+        // Multiplikation & Division zuerst
+        let processed = [];
+        let i = 0;
+        
+        while (i < tokens.length) {
+            const token = tokens[i];   
+            
+            if (token === "*" || token === "/") {
+                const prev = processed.pop();
+                const next = tokens[i + 1];
 
-        tokens.forEach(token => {
-            if (typeof token === "number") {
+                if (typeof next !== "number") {
+                    throw new Error ("Fehlender Operand")
+                }
+            if (token === "*") {
+                processed.push(prev * next);
+            } else if (token === "/") {
+                if (next === 0) {
+                    alert("Division durch 0 ist nicht erlaubt");
+                    throw new Error("Division durch 0");
+                }
+                processed.push(prev / next);
+            }
+            // Überspringe Operator und nächste Zahl
+            i += 2; 
+            } else {
+                processed.push(token);
+                i++;
+            }
+
+        }
+
+        
+        let result = processed[0];
+        let currentOperator = null;
+
+        processed.forEach((token, index) => {
+            if (typeof token === "string") {
+                currentOperator = token;
+            } else if (typeof token === "number" && index !== 0) {
                 if (currentOperator === "+") {
                     result += token;
-                } else if (currentOperator === "-") {
+                } else if ( currentOperator === "-") {
                     result -= token;
                 }
-                } else if (typeof token === "string") {
-                    currentOperator = token;
-                }
+
+            }
         });
         return result;
 
