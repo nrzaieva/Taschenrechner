@@ -6,6 +6,12 @@ function calculateInput() {
     /* was der Benutzer eingegeben hat */
     const input = document.getElementById("input").value;
 
+    // Prüfung auf leere Eingabe
+    if (input.trim() === "") {
+        alert("Bitte geben Sie eine Rechenaufgabe ein.");
+        throw new Error("Eingabe ist leer");
+    }
+
     /* array von Zahlen und Zeichen */
     const tokens = parseInput(input);
 
@@ -16,8 +22,18 @@ function calculateInput() {
     document.getElementById("ergebnis").value = result;
 }
   
-/* global */
+// global 
 function parseInput(input) {
+
+    // Buchstaben und ungültige Zeichen prüfen, Entferne Leerzeichen
+    const cleanedInput = input.replace(/\s+/g, '');
+    const validCharsRegex = /^[0-9+\-*/]+$/;
+    
+    if (!validCharsRegex.test(cleanedInput)) {
+        alert("Ungültige Zeichen! Bitte nur Zahlen und + - * / verwenden.");
+        throw new Error("Ungültige Eingabe");
+    }
+
     // Noch * und / hinzugefügt
     const regex = /(\d+|\+|\-|\*|\/)/g;
     return input.match(regex).map(token => { 
