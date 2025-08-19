@@ -34,6 +34,15 @@ function parseInput(input) {
         throw new Error("Ungültige Eingabe");
     }
 
+    // Prüfung des ersten und letzten Tokens
+    const firstToken = tokens[0];
+    const lastToken = tokens[tokens.length - 1];
+
+    if (typeof firstToken === "string" || typeof lastToken === "string") {
+        alert("Die Eingabe darf nicht mit einem Operator beginnen oder enden.");
+        throw new Error("Ungültige Eingabe: Anfang oder Ende ist ein Operator");
+    }
+
     // Noch * und / hinzugefügt
     const regex = /(\d+|\+|\-|\*|\/)/g;
     return input.match(regex).map(token => { 
